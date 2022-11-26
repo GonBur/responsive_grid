@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*propiedad html*/
+html{
+    height: 100%;
+}
+
+/*cuerpo*/
+body{
+    min-height: 100%;
+}
+
+/*body padre*/
+.contenedor>*{
+    box-shadow: -1px 1px 7px 0px  rgb(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+}
+/*clase del body*/
+.contenedor{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer"; 
+    gap: 10px;  
+}
+
+/*cabecera*/
+.header{
+    grid-area: header;
+    background-color: blue;
+    color: white;
+}
+
+/*menu nave*/
+.nav{
+    grid-area: nav;
+    background-color: pink;
+}
+
+/*cuerpo*/
+.main{
+    grid-area: main;
+    background-color: yellow;
+}
+
+/*aside*/
+.aside{
+    grid-area: aside;
+    background-color: salmon;
+}
+
+/*pie pagina*/
+.footer{
+    grid-area: footer;
+    background-color: darkcyan;
+}
+
+@media (min-width:600px){
+    .contenedor{
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+     } 
+     
+}
+
+
+/*@media screen and(min-width:767px) and(max-width:1023px){
+    .main{
+       background-color: red;  
+       color: blue;
+    } 
+}
+
+@media screen and(min-width:1024px){
+    .contenedor{
+        background-color: red;
+    }
+    .main{
+        background-color: blue;
+        color: red;
+    }
+}
